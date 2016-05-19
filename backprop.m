@@ -36,10 +36,6 @@ train_inp = [train_inp bias];
 %read how many inputs
 inputs = size(train_inp,2);
 
-%---------- data loaded ------------
-
-
-%--------- add some control buttons ---------
 
 %add button for early stopping
 hstop = uicontrol('Style','PushButton','String','Stop', 'Position', [5 5 70 20],'callback','earlystop = 1;'); 
@@ -57,8 +53,6 @@ hlr = uicontrol('Style','slider','value',.1,'Min',.01,'Max',1,'SliderStep',[0.01
 %set initial random weights
 weight_input_hidden = (randn(inputs,hidden_neurons) - 0.5)/10;
 weight_hidden_output = (randn(1,hidden_neurons) - 0.5)/10;
-
-
 
 %do a number of epochs
 for iter = 1:epochs
