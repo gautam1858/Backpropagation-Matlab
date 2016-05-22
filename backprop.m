@@ -13,7 +13,11 @@ if size(train_inp,1) ~= size(train_out,1)
    return 
 end    
 
+
 %standardise the data to mean=0 and standard deviation=1
+mu_inp = mean(train_inp);
+sigma_inp = std(train_inp);
+train_inp = (train_inp(:,:) - mu_inp(:,1)) / sigma_inp(:,1);
 %inputs
 
 
