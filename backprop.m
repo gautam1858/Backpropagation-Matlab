@@ -15,9 +15,7 @@ end
 
 %standardise the data to mean=0 and standard deviation=1
 %inputs
-mu_inp = mean(train_inp);
-sigma_inp = std(train_inp);
-train_inp = (train_inp(:,:) - mu_inp(:,1)) / sigma_inp(:,1);
+
 
 %outputs
 train_out = train_out';
