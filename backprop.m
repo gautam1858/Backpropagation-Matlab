@@ -1,9 +1,9 @@
 %user specified values
 hidden_neurons = 3;
 epochs = 10000;
-% ------- load in the data -------
 
-% XOR data
+ %Load data
+
 train_inp = [1 1; 1 0; 0 1; 0 0];
 train_out = [1; 0; 0; 1];
 
@@ -11,6 +11,7 @@ train_out = [1; 0; 0; 1];
 if size(train_inp,1) ~= size(train_out,1)
     disp('ERROR: data mismatch')
    return 
+   
 end    
 
 
@@ -51,8 +52,8 @@ reset = 0;
 hlr = uicontrol('Style','slider','value',.1,'Min',.01,'Max',1,'SliderStep',[0.01 0.1],'Position', get(hreset,'position')+[75 0 100 0]);
 
 
-% ---------- set weights -----------------
-%set initial random weights
+% ---------- set random initital weights -----------------
+
 weight_input_hidden = (randn(inputs,hidden_neurons) - 0.5)/10;
 weight_hidden_output = (randn(1,hidden_neurons) - 0.5)/10;
 
